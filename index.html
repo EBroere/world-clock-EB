@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone-with-data-1970-2030.min.js"></script>
     <link href="src/styles.css" rel="stylesheet" type="text/css" />
     <title>Document</title>
   </head>
@@ -12,26 +14,25 @@
 
       <select>
         <option value="">Select a city</option>
-        <option value="">Groningen</option>
-        <option value="">London</option>
-        <option value="">Mexico</option>
-        <option value="">Florida</option>
+        <option value="">Beijing 🇨🇳</option>
+        <option value="">Washington, D.C. 🇺🇸</option>
+        <option value="">New Delhi 🇮🇳</option>
       </select>
 
-      <div class="city">
+      <div class="city" id="groningen">
         <div>
           <h2>Groningen 🇳🇱</h2>
-          <div class="date">March 3rd 2024</div>
+          <div class="date"></div>
         </div>
-        <div class="time">15:39:35 <small>PM</small></div>
+        <div class="time"></div>
       </div>
 
-      <div class="city">
+      <div class="city" id="paris">
         <div>
           <h2>Paris 🇫🇷</h2>
-          <div class="date">March 3rd 2024</div>
+          <div class="date"></div>
         </div>
-        <div class="time">15:39:35 <small>PM</small></div>
+        <div class="time"></div>
       </div>
     </div>
     <footer>
