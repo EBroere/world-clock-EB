@@ -1,1 +1,22 @@
-body
+body {
+  background: purple;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+footer {
+  border-top: 1px solid #f9f7fe;
+  text-align: center;
+  color: white;
+}
+
+.footer-emoji {
+  color: initial;
+}
+
+a {
+  color: whitesmoke;
+}
