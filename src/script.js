@@ -2,13 +2,11 @@
 
 setInterval(setClocks, 1000);
 
-const timezones = ["Europe/Amsterdam"];
+let selectedTimezone = "Europe/Amsterdam"; // Default timezone
 
 function setClocks() {
-  timezones.forEach((timezone, index) => {
-    const clock = document.querySelectorAll(".clock")[index];
-    setClock(clock, timezone);
-  });
+  const clock = document.querySelector(".clock");
+  setClock(clock, selectedTimezone);
 }
 
 function setClock(clock, timezone) {
@@ -26,6 +24,8 @@ function setClock(clock, timezone) {
   setRotation(hourHand, hoursRatio);
 }
 
+
+
 function setRotation(element, rotationRatio) {
   element.style.setProperty("--rotation", rotationRatio * 360);
 }
@@ -35,12 +35,11 @@ setClocks();
 // Digital clock
 
 function updateTime() {
-  //Groningen
   let groningenElement = document.querySelector("#groningen");
   if (groningenElement) {
     let groningenDateElement = groningenElement.querySelector(".date");
     let groningenTimeElement = groningenElement.querySelector(".time");
-    let groningenTime = moment().tz("Europe/Amsterdam");
+    let groningenTime = moment().tz(selectedTimezone);
 
     groningenDateElement.innerHTML = groningenTime.format("MMMM Do YYYY");
     groningenTimeElement.innerHTML = groningenTime.format(
@@ -51,7 +50,9 @@ function updateTime() {
 
 //Timezone digital clock
 function updateCity(event) {
-  let cityTimeZone = event.target.value;
+  selectedTimezone = event.target.value;
+  updateTime();
+  setClocks();
   if (cityTimeZone === "current") {
     cityTimeZone = moment.tz.guess();
   }
@@ -72,7 +73,7 @@ function updateCity(event) {
 }
 
 updateTime();
-setInterval(updateTime, 1);
+setInterval(updateTime, 1000);
 
 let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", updateCity);
