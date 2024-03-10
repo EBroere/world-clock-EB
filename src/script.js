@@ -22,9 +22,8 @@ function setClock(clock, timezone) {
   setRotation(secondHand, secondsRatio);
   setRotation(minuteHand, minutesRatio);
   setRotation(hourHand, hoursRatio);
+
 }
-
-
 
 function setRotation(element, rotationRatio) {
   element.style.setProperty("--rotation", rotationRatio * 360);
@@ -48,11 +47,15 @@ function updateTime() {
   }
 }
 
-//Timezone digital clock
+//Update both clocks
 function updateCity(event) {
   selectedTimezone = event.target.value;
   updateTime();
   setClocks();
+
+  //Update city
+
+  let cityTimeZone = event.target.value;
   if (cityTimeZone === "current") {
     cityTimeZone = moment.tz.guess();
   }
