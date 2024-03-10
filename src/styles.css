@@ -8,12 +8,18 @@ body {
   background-position: 4px 0, 4px 0, 0 0, 0 0;
   background-size: 8px 8px;
   background-repeat: repeat;
-  font-family: sans-serif;
+  font-family: Comfortaa, sans-serif;
 }
 
 .monoton-regular {
   font-family: "Monoton", sans-serif;
   font-weight: 400;
+  font-style: normal;
+}
+
+.comfortaa {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
   font-style: normal;
 }
 
@@ -30,12 +36,11 @@ h2 {
 }
 
 select {
-  display: block;
   width: 100%;
   font-size: 18px;
   border-radius: 4px;
   padding: 10px;
-  margin: 20px;
+  margin: 20px, auto;
 }
 
 *,
