@@ -1,9 +1,5 @@
 body {
-  background: linear-gradient(
-    112.1deg,
-    rgb(32, 38, 57) 11.4%,
-    rgb(63, 76, 119) 70.2%
-  );
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   font-family: sans-serif;
 }
 
@@ -23,6 +19,131 @@ select {
   font-size: 18px;
   border-radius: 4px;
   padding: 10px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-optical-sizing: auto;
+  font-weight: 10;
+  font-style: normal;
+}
+
+.timeZone {
+  font-size: 30px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  margin: 0px 80px 0px 50px;
+}
+
+.clock-container {
+  display: flex;
+  margin: auto;
+  padding-top: 20px;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.clock {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  border: 2px solid black;
+  position: relative;
+  margin-right: 20px;
+}
+
+.clock .number {
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-size: 1.5rem;
+}
+
+.clock .number1 {
+  --rotation: 30deg;
+}
+.clock .number2 {
+  --rotation: 60deg;
+}
+.clock .number3 {
+  --rotation: 90deg;
+}
+.clock .number4 {
+  --rotation: 120deg;
+}
+.clock .number5 {
+  --rotation: 150deg;
+}
+.clock .number6 {
+  --rotation: 180deg;
+}
+.clock .number7 {
+  --rotation: 210deg;
+}
+.clock .number8 {
+  --rotation: 240deg;
+}
+.clock .number9 {
+  --rotation: 270deg;
+}
+.clock .number10 {
+  --rotation: 300deg;
+}
+.clock .number11 {
+  --rotation: 330deg;
+}
+
+.clock .hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  background-color: black;
+  border: 1px solid white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform-origin: bottom;
+  z-index: 10;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  z-index: 11;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.clock .hand.second {
+  width: 3px;
+  height: 45%;
+  background-color: red;
+}
+
+.clock .hand.minute {
+  width: 7px;
+  height: 40%;
+  background-color: black;
+}
+
+.clock .hand.hour {
+  width: 10px;
+  height: 35%;
+  background-color: black;
 }
 
 .container {
@@ -59,6 +180,28 @@ select {
   font-size: 24px;
   line-height: 36px;
   vertical-align: middle;
+}
+
+button {
+  background-color: #fafbfc;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  color: #24292e;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+}
+
+button:hover {
+  background-color: #f3f4f6;
+  transition-duration: 0.1s;
 }
 
 footer {
